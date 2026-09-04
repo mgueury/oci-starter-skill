@@ -4,13 +4,13 @@ Use this skill to create applications and OCI Starter projects for Oracle Cloud 
 
 ## Before you install
 
-Install the **entire** `oci-starter-skill` folder, not only `SKILL.md`. The skill depends on the files in `scripts/` and `references/`; retaining `agents/` and `helper/` is also recommended.
+Install the **entire** `oci-starter-skill` folder, not only `SKILL.md`. The skill depends on the files in `scripts/` and `references/`; retaining `agents/` and `helper/` is also recommended. You can get it from the [GitHub repository](https://github.com/mgueury/oci-starter-skill).
 
 The commands below assume that the folder you downloaded or cloned is named `oci-starter-skill` and that your terminal is in its parent directory.
 
 > **Windows notice:** The Windows paths and PowerShell commands below are provided as a best-effort reference and have **not been tested on Windows**.
 
-## Codex desktop
+## Codex
 
 ### macOS and Linux
 
@@ -40,18 +40,9 @@ Restart Codex desktop and use the same prompt shown above.
 
 ## ChatGPT desktop
 
-1. Create a ZIP archive whose root contains `SKILL.md` alongside `scripts/`, `references/`, `agents/`, and `helper/`. Do not zip an extra enclosing `oci-starter-skill/` directory.
-
-   On macOS or Linux, from inside the `oci-starter-skill` folder:
-
-   ```sh
-   zip -r ../oci-starter-skill.zip SKILL.md scripts references agents helper
-   ```
-
-   On Windows, create the equivalent archive in File Explorer or PowerShell. This workflow is untested on Windows.
-
+1. Open the [OCI Starter Skill repository](https://github.com/mgueury/oci-starter-skill), select **Code** → **Download ZIP**, and save the archive.
 2. In ChatGPT desktop, open **Plugins** in the sidebar, open the **Skills** tab, then select **Create** → **Upload**.
-3. Select `oci-starter-skill.zip` and complete the scan or review process, if prompted.
+3. Select the ZIP archive and complete the scan or review process, if prompted.
 4. Start a new chat and ask ChatGPT to use `$oci-starter-skill`.
 
 Skill uploads are available only for eligible accounts and may be disabled by your workspace administrator. Skills installed in ChatGPT desktop are managed separately from Codex skills.
