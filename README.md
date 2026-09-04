@@ -2,11 +2,19 @@
 
 Use this skill to create applications and OCI Starter projects for Oracle Cloud Infrastructure. It guides an agent through choosing an OCI Starter architecture, downloading the appropriate scaffold, and implementing the application in it.
 
-## Before you install
+## Get the skill
 
-Install the **entire** `oci-starter-skill` folder, not only `SKILL.md`. The skill depends on the files in `scripts/` and `references/`; retaining `agents/` and `helper/` is also recommended. You can get it from the [GitHub repository](https://github.com/mgueury/oci-starter-skill).
+Choose one option:
 
-The commands below assume that the folder you downloaded or cloned is named `oci-starter-skill` and that your terminal is in its parent directory.
+```sh
+git clone https://github.com/mgueury/oci-starter-skill.git
+```
+
+Or download and extract [oci-starter-skill-main.zip](https://github.com/mgueury/oci-starter-skill/archive/refs/heads/main.zip).
+
+Install the **entire** `oci-starter-skill` folder, not only `SKILL.md`. The skill depends on its supporting files in `scripts/`, `references/`, `agents/`, and `helper/`.
+
+The terminal commands below assume that `oci-starter-skill` and, where applicable, your target project are in the current directory.
 
 > **Windows notice:** The Windows paths and PowerShell commands below are provided as a best-effort reference and have **not been tested on Windows**.
 
@@ -29,7 +37,7 @@ Use $oci-starter-skill to create a Python application for Kubernetes with OCI St
 
 ### Windows (untested)
 
-In PowerShell, copy the complete folder to `%USERPROFILE%\\.codex\\skills`:
+In PowerShell, from the directory containing `oci-starter-skill`, copy the complete folder to `%USERPROFILE%\\.codex\\skills`:
 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\\.codex\\skills"
@@ -40,7 +48,7 @@ Restart Codex desktop and use the same prompt shown above.
 
 ## ChatGPT desktop
 
-1. Open the [OCI Starter Skill repository](https://github.com/mgueury/oci-starter-skill), select **Code** → **Download ZIP**, and save the archive.
+1. Download [oci-starter-skill-main.zip](https://github.com/mgueury/oci-starter-skill/archive/refs/heads/main.zip).
 2. In ChatGPT desktop, open **Plugins** in the sidebar, open the **Skills** tab, then select **Create** → **Upload**.
 3. Select the ZIP archive and complete the scan or review process, if prompted.
 4. Start a new chat and ask ChatGPT to use `$oci-starter-skill`.
@@ -62,7 +70,7 @@ cp -R oci-starter-skill "$HOME/.config/opencode/skills/"
 
 ### Project installation (macOS and Linux)
 
-Make the skill available only in one project. Run this from the parent directory containing both the target project and `oci-starter-skill`:
+Make the skill available only in one project. Run this from the directory containing both the target project and `oci-starter-skill`:
 
 ```sh
 mkdir -p my-project/.opencode/skills
