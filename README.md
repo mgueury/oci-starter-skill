@@ -2,6 +2,8 @@
 
 Use this skill to create applications and OCI Starter projects for Oracle Cloud Infrastructure. It guides an agent through choosing an OCI Starter architecture, downloading the appropriate scaffold, and implementing the application in it.
 
+This is a skill that should work with all coding agents. Below, you will find how to instal it for Codex, ChatGTP Desktop, OpenCode.
+
 > **Windows notice:** The Windows paths and PowerShell commands below are provided as a best-effort reference and have **not been tested on Windows**.
 
 ## Codex
