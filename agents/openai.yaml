@@ -1,0 +1,4 @@
+interface:
+  display_name: "OCI Starter"
+  short_description: "Create and deploy OCI Starter apps"
+  default_prompt: "Use $oci-starter-skill to create a Python application for Kubernetes with OCI Starter."
