@@ -14,7 +14,7 @@ Or download and extract [oci-starter-skill-main.zip](https://github.com/mgueury/
 
 Install the **entire** `oci-starter-skill` folder, not only `SKILL.md`. The skill depends on its supporting files in `scripts/`, `references/`, `agents/`, and `helper/`.
 
-The terminal commands below assume that `oci-starter-skill` and, where applicable, your target project are in the current directory.
+The project-local OpenCode command below assumes that your target project is in the current directory.
 
 > **Windows notice:** The Windows paths and PowerShell commands below are provided as a best-effort reference and have **not been tested on Windows**.
 
@@ -22,11 +22,12 @@ The terminal commands below assume that `oci-starter-skill` and, where applicabl
 
 ### macOS and Linux
 
-Copy the complete folder into your global Codex skills directory:
+Clone the skill directly into your global Codex skills directory:
 
 ```sh
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R oci-starter-skill "${CODEX_HOME:-$HOME/.codex}/skills/"
+cd "${CODEX_HOME:-$HOME/.codex}/skills"
+git clone https://github.com/mgueury/oci-starter-skill.git
 ```
 
 Restart Codex desktop, then ask it to use `$oci-starter-skill`, for example:
@@ -37,11 +38,12 @@ Use $oci-starter-skill to create a Python application for Kubernetes with OCI St
 
 ### Windows (untested)
 
-In PowerShell, from the directory containing `oci-starter-skill`, copy the complete folder to `%USERPROFILE%\\.codex\\skills`:
+In PowerShell, clone the skill into `%USERPROFILE%\\.codex\\skills`:
 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\\.codex\\skills"
-Copy-Item -Recurse -Path .\\oci-starter-skill -Destination "$env:USERPROFILE\\.codex\\skills\\oci-starter-skill"
+Set-Location "$env:USERPROFILE\\.codex\\skills"
+git clone https://github.com/mgueury/oci-starter-skill.git
 ```
 
 Restart Codex desktop and use the same prompt shown above.
@@ -61,20 +63,22 @@ OpenCode discovers directory-based skills that contain `SKILL.md`. Keep the fold
 
 ### Global installation (macOS and Linux)
 
-Make the skill available in all OpenCode projects:
+Clone the skill to make it available in all OpenCode projects:
 
 ```sh
 mkdir -p "$HOME/.config/opencode/skills"
-cp -R oci-starter-skill "$HOME/.config/opencode/skills/"
+cd "$HOME/.config/opencode/skills"
+git clone https://github.com/mgueury/oci-starter-skill.git
 ```
 
 ### Project installation (macOS and Linux)
 
-Make the skill available only in one project. Run this from the directory containing both the target project and `oci-starter-skill`:
+Make the skill available only in one project. Replace `my-project` with your project directory:
 
 ```sh
 mkdir -p my-project/.opencode/skills
-cp -R oci-starter-skill my-project/.opencode/skills/
+cd my-project/.opencode/skills
+git clone https://github.com/mgueury/oci-starter-skill.git
 ```
 
 ### Windows (untested)
@@ -83,7 +87,8 @@ Use the corresponding OpenCode skill directory, typically `%USERPROFILE%\\.confi
 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\\.config\\opencode\\skills"
-Copy-Item -Recurse -Path .\\oci-starter-skill -Destination "$env:USERPROFILE\\.config\\opencode\\skills\\oci-starter-skill"
+Set-Location "$env:USERPROFILE\\.config\\opencode\\skills"
+git clone https://github.com/mgueury/oci-starter-skill.git
 ```
 
 Restart OpenCode, then request the skill by name:
@@ -98,6 +103,6 @@ Use the oci-starter-skill to create a Python application for Kubernetes with OCI
 - Confirm the installed copy also contains `scripts/oci_starter_url.py` and `references/options.md`.
 - Restart the relevant desktop app after installing or updating the skill.
 - If the skill is not discovered, check for an accidentally nested path such as `oci-starter-skill/oci-starter-skill/SKILL.md`.
-- When updating an existing installation, replace the complete installed skill folder so supporting files stay in sync with `SKILL.md`.
+- When updating a cloned installation, run `git pull` from its `oci-starter-skill` directory, then restart the app.
 
 For product-specific availability and upload permissions, see the official [Skills in ChatGPT guide](https://help.openai.com/en/articles/20001066-skills-in-chatgpt/) and the [OpenCode skills documentation](https://opencode.ai/v2/docs/skills).
