@@ -2,20 +2,6 @@
 
 Use this skill to create applications and OCI Starter projects for Oracle Cloud Infrastructure. It guides an agent through choosing an OCI Starter architecture, downloading the appropriate scaffold, and implementing the application in it.
 
-## Get the skill
-
-Choose one option:
-
-```sh
-git clone https://github.com/mgueury/oci-starter-skill.git
-```
-
-Or download and extract [oci-starter-skill-main.zip](https://github.com/mgueury/oci-starter-skill/archive/refs/heads/main.zip).
-
-Install the **entire** `oci-starter-skill` folder, not only `SKILL.md`. The skill depends on its supporting files in `scripts/`, `references/`, `agents/`, and `helper/`.
-
-The project-local OpenCode command below assumes that your target project is in the current directory.
-
 > **Windows notice:** The Windows paths and PowerShell commands below are provided as a best-effort reference and have **not been tested on Windows**.
 
 ## Codex
