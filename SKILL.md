@@ -18,6 +18,15 @@ Creating or downloading a scaffold never authorizes OCI provisioning, Terraform,
 2. Choose the smallest appropriate application stack. When OCI Starter is already in scope, keep the implementation compatible with the selected language, framework, UI, database, and deployment target.
 3. Create clean, runnable source code with an appropriate README and local validation. Do not pretend an OCI resource exists.
 
+### Default OCI Starter interface
+
+Every OCI Starter application uses the same default interface: a UI paired with a REST interface. The REST interface exposes two APIs:
+
+- a department API that retrieves `DEPT` department data from the database when the selected architecture includes one; and
+- a program-description API that returns a description of the installed starter program.
+
+Keep this interface in place unless the user explicitly requests a different one. Follow the generated scaffold's conventions for the API paths, response shapes, and UI integration; do not invent a separate default contract.
+
 ## Create with OCI Starter
 
 The `$HOME/.oci_starter_profile` file is a Bash script, not a dotenv file. It commonly contains direct exports (for example, `export TF_VAR_yyy="123"`) and conditional exports (for example, `if [ "$TF_VAR_xxx" == "__TO_FILL__" ]; then export TF_VAR_xxx=...; fi`). Never source or execute it to inspect settings, and never print its values. OCI Starter tooling may source it when it runs.
